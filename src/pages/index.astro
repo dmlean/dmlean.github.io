@@ -1,0 +1,550 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const year = new Date().getFullYear();
+
+const navItems = [
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#perfil", label: "Perfil" },
+  { href: "#habilidades", label: "Habilidades" },
+  { href: "#cv", label: "CV" },
+  { href: "#contacto", label: "Contacto" },
+];
+
+const trustSignals = [
+  {
+    value: "DAW",
+    label: "CFGS en curso",
+    detail: "Desarrollo de Aplicaciones Web desde 09/2025",
+  },
+  {
+    value: "240h",
+    label: "CodeOp Front-End",
+    detail: "Formación complementaria en desarrollo web",
+  },
+  {
+    value: "383h",
+    label: "Fnac Barcelona",
+    detail: "Atención, venta IT y soporte básico",
+  },
+  {
+    value: "3",
+    label: "proyectos revisables",
+    detail: "Demos, repositorios y código público",
+  },
+];
+
+const reviewPath = [
+  {
+    step: "01",
+    title: "Ver una demo",
+    description: "Empieza por una demo publicada para evaluar interfaz, responsive y claridad visual.",
+    href: "#proyectos",
+  },
+  {
+    step: "02",
+    title: "Revisar el repositorio",
+    description: "Contrasta la estructura del código, tecnologías usadas y alcance real del proyecto.",
+    href: "https://github.com/dmlean",
+  },
+  {
+    step: "03",
+    title: "Contactar",
+    description: "Si el perfil encaja para prácticas DAW o Front-End Junior, usa email o LinkedIn.",
+    href: "#contacto",
+  },
+];
+
+const projects = [
+  {
+    id: "confilean",
+    name: "ConfiLean",
+    type: "Demo web tipo red social",
+    objective:
+      "Maquetar una experiencia multipágina con pantallas de login, registro y perfil, cuidando distribución y lectura.",
+    observable:
+      "Demo publicada en GitHub Pages y repositorio abierto para revisar estructura HTML/CSS y comportamiento visual.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    evidence: ["Demo navegable", "Repositorio público", "Maquetación por páginas"],
+    demo: "https://dmlean.github.io/ConfiLean/",
+    repo: "https://github.com/dmlean/ConfiLean",
+  },
+  {
+    id: "madelyn-torff",
+    name: "Madelyn Torff Landing",
+    type: "Landing page responsive",
+    objective:
+      "Construir una landing clara y adaptable, con jerarquía visual, espaciado consistente y presentación sobria.",
+    observable:
+      "Publicada en GitHub Pages; permite comprobar responsive, composición y consistencia de una página de presentación.",
+    stack: ["HTML", "CSS", "Tailwind"],
+    evidence: ["Demo responsive", "GitHub Pages", "Composición y jerarquía"],
+    demo: "https://dmlean.github.io/madelyn-torff-landing/",
+    repo: "https://github.com/dmlean/madelyn-torff-landing",
+  },
+  {
+    id: "quiz-java-console",
+    name: "Quiz Java Console",
+    type: "Aplicación Java por consola",
+    objective:
+      "Practicar lógica de programa, validación de entrada, lectura/escritura de ficheros y estadísticas desde terminal.",
+    observable:
+      "Repositorio disponible para revisar flujo, estructura Java y resolución de un ejercicio no visual.",
+    stack: ["Java", "POO", "CLI"],
+    evidence: ["Código Java", "Validación de entrada", "Lectura y escritura de ficheros"],
+    demo: null,
+    repo: "https://github.com/dmlean/quiz-java-console",
+  },
+];
+
+const profileItems = [
+  {
+    title: "Formación actual",
+    description:
+      "CFGS en Desarrollo de Aplicaciones Web en Institut d'Estudis Politècnics, Barcelona. Inicio: 09/2025.",
+  },
+  {
+    title: "Base técnica previa",
+    description:
+      "Grado Medio en Sistemas Microinformáticos y Redes en Institut Pedralbes, con base en sistemas, redes, seguridad básica y virtualización.",
+  },
+  {
+    title: "Experiencia con usuarios",
+    description:
+      "383 horas en Fnac Barcelona: venta y asesoramiento tecnológico, soporte básico, gestión de stock y adaptación del lenguaje técnico a perfiles no expertos.",
+  },
+];
+
+const technicalSkills = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "Tailwind CSS",
+  "CMS",
+  "Git / GitHub",
+  "SQL / MySQL",
+  "Java básico",
+  "PHP básico",
+  "WordPress",
+  "Windows",
+  "Linux",
+];
+
+const languages = [
+  { name: "Español", level: "Nativo" },
+  { name: "Catalán", level: "Nativo" },
+  { name: "Inglés", level: "Intermedio, en proceso de certificación B2" },
+];
+
+const contactLinks = [
+  {
+    label: "Email",
+    href: "mailto:dmlean@protonmail.com",
+    detail: "Contacto directo para prácticas o primera oportunidad junior.",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/dmlean",
+    detail: "Perfil profesional, contexto y conversación.",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/dmlean",
+    detail: "Repositorios, demos y evolución técnica.",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@dmlean",
+    detail: "Contenido complementario y presencia digital.",
+  },
+];
+---
+
+<BaseLayout
+  title="Mario de Molina Martín | Prácticas DAW / Front-End Junior"
+  description="Portfolio de Mario de Molina Martín, estudiante de DAW orientado a prácticas Front-End Junior en Barcelona o remoto."
+>
+  <div class="relative isolate min-h-screen overflow-hidden">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute right-[-9rem] top-28 h-80 w-80 rounded-full border border-white/20 opacity-35"
+    ></div>
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute bottom-[-8rem] left-[-7rem] h-72 w-72 rounded-full border border-white/15 opacity-30"
+    ></div>
+
+    <header class="border-b border-white/20 bg-bg/85 backdrop-blur">
+      <div class="mx-auto flex w-[min(100%-2rem,72rem)] flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+        <a href="#inicio" class="font-accent text-sm font-bold uppercase tracking-[0.28em] text-heading">
+          Mario de Molina Martín
+        </a>
+
+        <nav aria-label="Navegación principal">
+          <ul class="flex flex-wrap items-center gap-1 text-sm text-text-soft md:gap-3">
+            {
+              navItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="rounded-full px-3 py-2 transition hover:bg-heading hover:text-bg"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio" class="mx-auto w-[min(100%-2rem,72rem)] py-10 md:py-16">
+      <section class="grid items-center gap-10 md:grid-cols-[minmax(15rem,0.85fr)_1.15fr] md:gap-16">
+        <figure class="relative aspect-[3/4] max-w-sm overflow-hidden rounded-[1.5rem] border border-line bg-photo-bg">
+          <img
+            src="/assets/mario-de-molina-profile.jpg"
+            alt="Retrato profesional de Mario de Molina Martín"
+            width="1200"
+            height="1600"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="h-full w-full object-cover object-center grayscale contrast-[1.05]"
+          />
+          <figcaption class="absolute inset-x-4 bottom-4 rounded-[1rem] border border-white/35 bg-bg/82 px-4 py-3 backdrop-blur">
+            <span class="font-accent text-xs font-bold uppercase tracking-[0.22em] text-heading">
+              Prácticas DAW / Front-End Junior
+            </span>
+          </figcaption>
+        </figure>
+
+        <div class="space-y-7">
+          <div class="space-y-5">
+            <p class="eyebrow text-[clamp(0.72rem,1.4vw,0.95rem)] text-text-soft">
+              Barcelona / Remoto
+            </p>
+            <h1 class="display-title max-w-3xl text-[clamp(3.2rem,8vw,5.8rem)] text-heading">
+              Mario de Molina Martín
+            </h1>
+            <p class="max-w-2xl text-xl font-light leading-8 text-text-soft">
+              Estudiante de CFGS DAW orientado a prácticas Front-End Junior. Trabajo con HTML,
+              CSS, JavaScript y Tailwind, con base en sistemas y experiencia previa en atención
+              tecnológica.
+            </p>
+            <p class="max-w-2xl text-base leading-7 text-white/82">
+              Esta página está pensada para una revisión rápida: ver proyectos, contrastar código
+              y decidir si el perfil encaja para prácticas en Barcelona o remoto.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#proyectos"
+              class="inline-flex min-h-11 items-center justify-center rounded-full border border-line px-5 font-bold text-text transition hover:bg-heading hover:text-bg"
+            >
+              Ver proyectos
+            </a>
+            <a
+              href="#contacto"
+              class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 px-5 font-bold text-text transition hover:bg-heading hover:text-bg"
+            >
+              Contactar
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Datos de confianza" class="mt-12 grid gap-4 md:mt-16 md:grid-cols-4">
+        {
+          trustSignals.map((item) => (
+            <article class="rounded-[1.25rem] border border-white/25 bg-white/[0.035] p-5">
+              <p class="font-display text-4xl leading-none text-heading">{item.value}</p>
+              <h2 class="mt-4 font-accent text-sm font-bold uppercase tracking-[0.16em] text-heading">
+                {item.label}
+              </h2>
+              <p class="mt-3 text-sm leading-6 text-text-soft">{item.detail}</p>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="mt-10 rounded-[1.5rem] border border-line p-6 md:mt-14 md:p-10">
+        <div class="grid gap-8 lg:grid-cols-[0.82fr_1px_1.18fr] lg:gap-10">
+          <div class="space-y-8">
+            <div>
+              <p class="eyebrow text-xs text-text-soft">Ruta de evaluación</p>
+              <h2 class="section-title mt-4 text-[clamp(1.9rem,3.2vw,2.5rem)] text-heading">
+                Cómo revisar este portfolio
+              </h2>
+              <p class="mt-5 text-base leading-7 text-white/84">
+                Primero revisa una demo, después contrasta el código y, si el perfil encaja,
+                contacta por email o LinkedIn.
+              </p>
+            </div>
+
+            <ol class="space-y-4">
+              {
+                reviewPath.map((step) => (
+                  <li class="border-t border-white/25 pt-4">
+                    <a
+                      href={step.href}
+                      target={step.href.startsWith("http") ? "_blank" : undefined}
+                      rel={step.href.startsWith("http") ? "noreferrer" : undefined}
+                      class="group block"
+                    >
+                      <span class="font-display text-3xl leading-none text-heading">{step.step}</span>
+                      <span class="mt-2 block font-accent text-base font-bold text-heading group-hover:underline">
+                        {step.title}
+                      </span>
+                      <span class="mt-2 block text-sm leading-6 text-text-soft">
+                        {step.description}
+                      </span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+
+          <div class="hidden bg-line/65 lg:block"></div>
+
+          <div id="proyectos" class="space-y-7">
+            <div>
+              <p class="eyebrow text-xs text-text-soft">Proyectos destacados</p>
+              <h2 class="section-title mt-4 text-[clamp(1.9rem,3.2vw,2.5rem)] text-heading">
+                Evidencia antes que promesas
+              </h2>
+              <p class="mt-5 max-w-2xl text-base leading-7 text-white/84">
+                Los proyectos son el centro de la página. Cada uno indica objetivo, tecnologías y
+                una prueba observable: demo, repositorio y alcance real.
+              </p>
+            </div>
+
+            <div class="grid gap-4">
+              {
+                projects.map((project) => (
+                  <article
+                    id={project.id}
+                    class="rounded-[1.25rem] border border-white/25 bg-white/[0.035] p-5"
+                  >
+                    <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                      <div>
+                        <p class="font-accent text-xs font-bold uppercase tracking-[0.22em] text-muted">
+                          {project.type}
+                        </p>
+                        <h3 class="mt-2 font-accent text-xl font-bold leading-tight text-heading">
+                          {project.name}
+                        </h3>
+                      </div>
+                      <ul class="flex flex-wrap gap-2">
+                        {project.stack.map((item) => (
+                          <li class="rounded-full border border-white/25 px-3 py-1 text-xs text-text-soft">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <p class="mt-4 max-w-3xl text-sm leading-6 text-white/86">
+                      <strong class="font-bold text-heading">Objetivo:</strong> {project.objective}
+                    </p>
+                    <p class="mt-3 text-sm leading-6 text-text-soft">
+                      <strong class="font-bold text-heading">Prueba observable:</strong>{" "}
+                      {project.observable}
+                    </p>
+
+                    <ul class="mt-4 grid gap-2 rounded-[1rem] border border-white/15 bg-white/[0.025] p-4 text-sm leading-6 text-white/84 md:grid-cols-3">
+                      {project.evidence.map((item) => (
+                        <li class="flex gap-2">
+                          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-heading"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div class="mt-5 flex flex-wrap gap-3">
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          class="inline-flex min-h-10 items-center rounded-full border border-line px-4 text-sm font-bold text-text transition hover:bg-heading hover:text-bg"
+                        >
+                          Ver demo
+                        </a>
+                      )}
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                        class="inline-flex min-h-10 items-center rounded-full border border-white/35 px-4 text-sm font-bold text-text transition hover:bg-heading hover:text-bg"
+                      >
+                        Revisar repo
+                      </a>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="perfil" class="grid gap-8 border-b border-white/25 py-14 md:grid-cols-[0.85fr_1.15fr] md:py-18">
+        <div>
+          <p class="eyebrow text-xs text-text-soft">Perfil profesional</p>
+          <h2 class="section-title mt-4 text-[clamp(1.8rem,3vw,2.4rem)] text-heading">
+            Formación técnica y comunicación clara
+          </h2>
+          <p class="mt-5 max-w-md text-base leading-7 text-white/84">
+            Perfil junior en formación, con foco en frontend y una base útil para entender tanto
+            sistemas como necesidades de usuarios no técnicos.
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          {
+            profileItems.map((item) => (
+              <article class="rounded-[1.25rem] border border-white/20 bg-white/[0.035] p-5">
+                <h3 class="font-accent text-base font-bold uppercase tracking-[0.16em] text-heading">
+                  {item.title}
+                </h3>
+                <p class="mt-3 text-sm leading-6 text-white/84">{item.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="habilidades" class="grid gap-8 border-b border-white/25 py-14 md:grid-cols-[0.85fr_1.15fr] md:py-18">
+        <div>
+          <p class="eyebrow text-xs text-text-soft">Habilidades</p>
+          <h2 class="section-title mt-4 text-[clamp(1.8rem,3vw,2.4rem)] text-heading">
+            Frontend, base técnica e idiomas
+          </h2>
+        </div>
+
+        <div class="space-y-7">
+          <div>
+            <h3 class="font-accent text-sm font-bold uppercase tracking-[0.18em] text-heading">
+              Stack y herramientas
+            </h3>
+            <div class="mt-4 flex flex-wrap gap-3">
+              {
+                technicalSkills.map((skill) => (
+                  <span class="rounded-full bg-white/10 px-4 py-2 text-sm text-text-soft">{skill}</span>
+                ))
+              }
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-accent text-sm font-bold uppercase tracking-[0.18em] text-heading">
+              Idiomas
+            </h3>
+            <dl class="mt-4 grid gap-3 sm:grid-cols-3">
+              {
+                languages.map((language) => (
+                  <div class="rounded-[1rem] border border-white/20 bg-white/[0.035] p-4">
+                    <dt class="font-accent text-base font-bold text-heading">{language.name}</dt>
+                    <dd class="mt-2 text-sm leading-6 text-text-soft">{language.level}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv" class="grid gap-8 border-b border-white/25 py-14 md:grid-cols-[0.85fr_1.15fr] md:py-18">
+        <div>
+          <p class="eyebrow text-xs text-text-soft">CV visual</p>
+          <h2 class="section-title mt-4 text-[clamp(1.8rem,3vw,2.4rem)] text-heading">
+            CV descargable y revisable
+          </h2>
+          <p class="mt-5 max-w-md text-base leading-7 text-white/84">
+            Vista previa del CV visual en español, con descarga directa en PDF para procesos de
+            prácticas DAW o Front-End Junior.
+          </p>
+
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/assets/mario-de-molina-visual-cv.pdf"
+              download
+              class="inline-flex min-h-11 items-center justify-center rounded-full border border-line px-5 font-bold text-text transition hover:bg-heading hover:text-bg"
+            >
+              Descargar CV en PDF
+            </a>
+            <a
+              href="/assets/mario-de-molina-visual-cv.svg"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/35 px-5 font-bold text-text transition hover:bg-heading hover:text-bg"
+            >
+              Ver CV visual
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="/assets/mario-de-molina-visual-cv.pdf"
+          download
+          class="group block rounded-[1.25rem] border border-white/25 bg-white/[0.035] p-3 transition hover:border-line sm:p-4"
+          aria-label="Descargar CV visual de Mario de Molina Martín en PDF"
+        >
+          <span class="block max-h-[38rem] overflow-hidden rounded-[0.9rem] bg-white">
+            <img
+              src="/assets/mario-de-molina-visual-cv.svg"
+              alt="Vista previa del CV visual de Mario de Molina Martín"
+              width="794"
+              height="1123"
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full object-contain transition duration-300 group-hover:scale-[1.015]"
+            />
+          </span>
+          <span class="mt-3 block text-center font-accent text-xs font-bold uppercase tracking-[0.18em] text-heading">
+            Descargar PDF
+          </span>
+        </a>
+      </section>
+
+      <section id="contacto" class="grid gap-8 py-14 md:grid-cols-[0.85fr_1.15fr] md:py-18">
+        <div>
+          <p class="eyebrow text-xs text-text-soft">Contacto</p>
+          <h2 class="section-title mt-4 text-[clamp(1.8rem,3vw,2.4rem)] text-heading">
+            Siguiente paso simple
+          </h2>
+          <p class="mt-5 max-w-md text-base leading-7 text-white/84">
+            Para revisar trabajo, GitHub. Para contexto profesional, LinkedIn. Para una propuesta
+            concreta de prácticas, email. YouTube queda como canal complementario.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            contactLinks.map((link) => (
+              <a
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                class="rounded-[1.25rem] border border-white/25 bg-white/[0.035] p-5 transition hover:border-line hover:bg-heading hover:text-bg"
+              >
+                <span class="font-accent text-lg font-bold">{link.label}</span>
+                <span class="mt-3 block text-sm leading-6 text-current/80">{link.detail}</span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/20 py-6">
+      <div class="mx-auto flex w-[min(100%-2rem,72rem)] flex-col gap-3 text-sm text-text-soft md:flex-row md:items-center md:justify-between">
+        <p>&copy; {year} Mario de Molina Martín. Portfolio con Astro y Tailwind.</p>
+        <p>Prácticas DAW / Front-End Junior en Barcelona o remoto.</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.idea/
+.appdata/
+.localappdata/
+.npm-cache/
+.temp/
+pnpm-debug.log*
+desktop.ini
+Usar *.txt
